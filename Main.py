@@ -3,9 +3,9 @@ import postgresql as psql
 from Connection import *
 
 # Conexão local
-# con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
+con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
 # Conexão Externa
-con = Connection('pq://ocatolicobot:Voljin!555@179.83.95.126/ocatolicobot')
+# con = Connection('pq://ocatolicobot:Voljin!555@179.83.95.126/ocatolicobot')
 
 token = '76808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
 bot = telebot.TeleBot(token)
