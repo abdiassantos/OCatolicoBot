@@ -44,3 +44,7 @@ def echo_all(message):
         print('Chat_User inserido com Sucesso')
     else:
         print('Erro ao inserir Chat_User')
+
+
+# Executa o Bot.
+bot.polling()
