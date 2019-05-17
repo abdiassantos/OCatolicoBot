@@ -16,7 +16,7 @@ def send_welcome(message):
     bot.send_message(message.chat.id, 'Olá, seja bem vindo ao O Católico Bot!')
     bot.send_message(message.chat.id, 'Estamos em processo de criação!')
     bot.send_message(message.chat.id, 'Logo logo estarei pronto para lhe ajudar a encontrar a missa/adoração/evento/confissão que estiverem disponíveis para você')
-    bot.send_message(message.chat.id, 'Para mais informações ou sugestões entre em contato com: ocatolicobot@gmail.com')
+    bot.send_message(message.chat.id, 'Para mais informações ou sugestões entre em contato com: headsappsconsultoria@gmail.com')
 
     # Salvando dados do sobre o primeiro contato com o usuário.
     # Afim de gerar uma base de dados de todos os usuários.
