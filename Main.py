@@ -7,7 +7,7 @@ con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
 # Conexão Externa
 # con = Connection('pq://ocatolicobot:Voljin!555@179.83.95.126/ocatolicobot')
 
-token = '76808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
+token = '776808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
 bot = telebot.TeleBot(token)
 
 # Comandos de Boas Vindas.
