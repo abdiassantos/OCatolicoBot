@@ -26,10 +26,7 @@ def send_welcome(message):
     chat_id = '{' + str(message.chat.id) + '}'
     user_name = '{' + str(message.chat.username) + '}'
 
-    if conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name)):
-        print('Chat_User inserido com Sucesso')
-    else:
-        print('Erro ao inserir o Chat_User')
+    conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name))
     conn.commit()
     conn.close()
 
@@ -52,10 +49,7 @@ def echo_all(message):
     chat_id = '{' + str(message.chat.id) + '}'
     user_name = '{' + str(message.chat.username) + '}'
 
-    if conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name)):
-        print('Chat_User inserido com Sucesso')
-    else:
-        print('Erro ao inserir o Chat_User')
+    conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name))
     conn.commit()
     conn.close()
 
