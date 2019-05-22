@@ -1,14 +1,12 @@
 import telebot
-# import postgresql as psql
-# from Connection import *
-import sqlite3
+import postgresql as psql
+from Connection import *
 
-# Conexão usando SQLITE3
-conn = sqlite3.connect('ocatolicobot.db')
+
 # Conexão local Postgresql
 # con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
 # Conexão Externa
-# con = Connection('pq://ocatolicobot:Voljin!555@179.83.95.126/ocatolicobot')
+con = Connection('pq://ocatolicobot:Voljin!555@179.83.81.217/ocatolicobot')
 
 token = '776808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
 bot = telebot.TeleBot(token)
@@ -26,41 +24,18 @@ def send_welcome(message):
     chat_id = '{' + str(message.chat.id) + '}'
     user_name = '{' + str(message.chat.username) + '}'
 
-    conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name))
-    conn.commit()
-    conn.close()
-
-    # chat_id = '{' + str(message.chat.id) + '}'
-    # user_name = '{' + str(message.chat.username) + '}'
-
-    # sqlSaveUser = "insert into chat_user values (default, '{0}', '{1}')".format(chat_id, user_name)
-    # if con.manipulate(sqlSaveUser):
-    #     print('Chat_User inserido com Sucesso')
-    # else:
-    #     print('Erro ao inserir Chat_User')
+    sqlSaveUser = "insert into chat_user values (default, '{0}', '{1}')".format(chat_id, user_name)
+    if con.manipulate(sqlSaveUser):
+        print('Chat_User inserido com Sucesso')
+    else:
+        print('Erro ao inserir Chat_User')
 
 # Comandos personalizados.
 @bot.message_handler(func = lambda m: True)
 def echo_all(message):
     send_welcome(message)
 
-    chat_id = '{' + str(message.chat.id) + '}'
-    user_name = '{' + str(message.chat.username) + '}'
-
-    conn.execute("insert into chat_user (chat_id, chat_user_name) values ('{0}', '{1}')".format(chat_id, user_name))
-    conn.commit()
-    conn.close()
-
-
-    # chat_id = '{' + str(message.chat.id) + '}'
-    # user_name = '{' + str(message.chat.username) + '}'
-
-    # sqlSaveUser = "insert into chat_user values (default, '{0}', '{1}')".format(chat_id, user_name)
-    # if con.manipulate(sqlSaveUser):
-    #     print('Chat_User inserido com Sucesso')
-    # else:
-    #     print('Erro ao inserir Chat_User')
-
 
 # Executa o Bot.
+con.closeConnection()
 bot.polling()
