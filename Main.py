@@ -6,7 +6,7 @@ from Connection import *
 # Conexão local Postgresql
 # con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
 # Conexão Externa
-con = Connection('pq://ocatolicobot:Voljin!555@179.83.81.217/ocatolicobot')
+con = Connection('pq://ocatolicobot:ocatolicobotpasswd@179.83.81.217/ocatolicobot')
 
 token = '776808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
 bot = telebot.TeleBot(token)
@@ -24,7 +24,7 @@ def send_welcome(message):
     chat_id = '{' + str(message.chat.id) + '}'
     user_name = '{' + str(message.chat.username) + '}'
 
-    sqlSaveUser = "insert into chat_user values (default, '{0}', '{1}')".format(chat_id, user_name)
+    sqlSaveUser = "insert into chat_users values (default, '{0}', '{1}')".format(chat_id, user_name)
     if con.manipulate(sqlSaveUser):
         print('Chat_User inserido com Sucesso')
     else:
