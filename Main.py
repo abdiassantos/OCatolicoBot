@@ -4,9 +4,9 @@ from Connection import *
 
 
 # Conexão local Postgresql
-# con = Connection('pq://ocatolicobot:Voljin!555@127.0.0.1/ocatolicobot')
+con = Connection('pq://ocatolicobot:ocatolicobotpasswd@localhost/ocatolicobot')
 # Conexão Externa
-con = Connection('pq://ocatolicobot:ocatolicobotpasswd@179.83.81.217/ocatolicobot')
+#con = Connection('pq://ocatolicobot:ocatolicobotpasswd@179.83.81.217/ocatolicobot')
 
 token = '776808432:AAFusuIi1GyNlWb1nFdkWFl54s8LL89nQkw'
 bot = telebot.TeleBot(token)
@@ -37,5 +37,4 @@ def echo_all(message):
 
 
 # Executa o Bot.
-con.closeConnection()
 bot.polling()
